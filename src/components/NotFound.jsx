@@ -8,9 +8,9 @@ const NotFound = () => {
     <Typography
       variant="h6"
       component="a"
-      href="/empleados"
+      href="#"
       sx={{
-        mt: 2,
+        mt: 30,
         mr: 2,
         display: { md: "flex" },
         fontFamily: "monospace",

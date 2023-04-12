@@ -11,6 +11,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route
+          path="*"
+          element={
+            <>
+              <NavBar2 /> <NotFound />
+            </>
+          }
+        />
+        <Route
           path="/"
           element={
             <>
@@ -18,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </>
           }
         />
-        <Route path="*" element={<NotFound />} />
+
         {/* <Route path="/Empleado" element={<Empleado />} /> */}
       </Routes>
     </BrowserRouter>

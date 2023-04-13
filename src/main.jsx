@@ -5,6 +5,7 @@ import SignIn from "./components/SignIn";
 import NotFound from "./components/NotFound";
 import NavBar from "./components/NavBar";
 import NavBar2 from "./components/NavBar2";
+import Status from "./pages/Status";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -27,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           }
         />
 
-        {/* <Route path="/Empleado" element={<Empleado />} /> */}
+        <Route path="/status" element={<Status />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

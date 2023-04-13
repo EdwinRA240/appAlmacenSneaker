@@ -16,7 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {"DB_Sneaker "}
+      {"Bodega_Sneaker "}
       <Link color="inherit" href="https://mui.com/"></Link> {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -39,16 +39,6 @@ export default function SignIn() {
 
     console.log(Data);
   };
-
-  // const handleSetData = () =>{
-
-  //   // if (Data.password === "PassUser") {
-  //   //   alert("Again! Password");
-  //   //   this.props.history.push('/foo');
-  //   //   return ;
-  //   // }
-
-  // };
 
   return (
     <ThemeProvider theme={theme}>
@@ -73,7 +63,7 @@ export default function SignIn() {
             onBlur={handleSubmit}
             // onSubmit={handleSetData}
             noValidate
-            href="/Empleado"
+            href="/status"
             sx={{ mt: 1 }}
           >
             <TextField
@@ -98,7 +88,7 @@ export default function SignIn() {
             />
             <Button
               type="submit"
-              href="/Empleado"
+              href="/status"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}

@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound";
 import NavBar from "./components/NavBar";
 import NavBar2 from "./components/NavBar2";
 import Status from "./pages/Status";
+import Compras from "./pages/Compras";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         />
 
         <Route path="/status" element={<Status />} />
+        <Route path="/compras" element={<Compras />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

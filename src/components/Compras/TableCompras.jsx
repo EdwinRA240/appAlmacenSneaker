@@ -10,7 +10,7 @@ import { Container, IconButton } from "@mui/material";
 // import AlertDialogDeleteEmpleado from "./AlertDialogDeleteEmpleado";
 // import AlertDialogUpdateEmpleado from "./AlertDialogUpdateEmpleado";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import NavBar2 from "../NavBar2";
+import NavBar from "../NavBar";
 // import AlertDialogAddDireccion from "./AlertDialogAddEmpleado";
 
 export default function TableB(props) {
@@ -19,7 +19,7 @@ export default function TableB(props) {
   };
   return (
     <>
-    <NavBar2/>
+    <NavBar/>
     <Container maxWidth="lg" sx={{ mt: 12, mb: 5 }}>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">

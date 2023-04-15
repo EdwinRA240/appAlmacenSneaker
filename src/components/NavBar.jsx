@@ -14,18 +14,11 @@ import MenuItem from "@mui/material/MenuItem";
 import StorageIcon from "@mui/icons-material/Storage";
 
 const pages = [
-  "Empleado",
-  "CargoEpl",
-  "Modelo",
-  "Marca",
-  "Proposito",
-  "Talla",
-  "Direccion",
-  "Sucursal",
-  "Descuento",
-  "Cliente",
+  "Status",
+  "Compras",
+  "Distribucion",
 ];
-const settings = ["Account", "Sign out"];
+const settings = ["Cuenta", "Cerrar Sesion"];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);

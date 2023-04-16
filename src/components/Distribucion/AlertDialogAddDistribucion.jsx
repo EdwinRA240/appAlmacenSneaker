@@ -7,43 +7,32 @@ import AddIcon from "@mui/icons-material/Add";
 import { Button, FormGroup, TextField } from "@mui/material";
 import { React, useEffect, useState } from "react";
 import CatalogoPago from "../Catalogos/CatalogoPago";
-import CatalogoProveedor from "../Catalogos/CatalogoProveedor";
+import CatalogoSucursal from "../Catalogos/CatalogoSucursal";
 import CatalogoSneaker from "../Catalogos/CatalogoSneaker";
 // import FormControlSucursal from "../Catalogos/FormControlSucursal";
 // import FormControlCargo from "../Catalogos/FormControlCargo";
 
 export default function AlertDialogAddCompras(props) {
-  const [Cpago, setCpago] = useState([]);
-  const [Pago, setPago] = useState(1);
-  const [Cproveedor, setCproveedor] = useState([]);
-  const [Proveedor, setProveedor] = useState(1);
+  const [CSucursal, setCSucursal] = useState([]);
+  const [Sucursal, setSucursal] = useState(1);
   const [Csneaker, setCsneaker] = useState([]);
   const [Sneaker, setSneaker] = useState(1);
   const [Cantidad, setCantidad] = useState(1);
   const [open, setOpen] = useState(false);
   const [Data, setData] = useState({
-    PAGO: 1,
-    PROVEEDOR: 1,
+    SUCURSAL: 1,
     SNEAKER: 1,
     CANTIDAD: 1,
   });
 
   useEffect(() => {
-    fetch("http://localhost:3200/catalogoPago")
-      .then((response) => {
-        return response.json();
-      })
-      .then((responseJson) => {
-        setCpago(responseJson);
-        console.log(responseJson);
-      });
 
-    fetch("http://localhost:3200/catalogoProveedor")
+    fetch("http://localhost:3200/catalogoSucursal")
       .then((response) => {
         return response.json();
       })
       .then((responseJson) => {
-        setCproveedor(responseJson);
+        setCSucursal(responseJson);
         console.log(responseJson);
       });
 
@@ -67,15 +56,14 @@ export default function AlertDialogAddCompras(props) {
 
   const handleSetData = () => {
     setData({
-      PAGO: Number(Pago),
-      PROVEEDOR: Number(Proveedor),
+      SUCURSAL: Number(Sucursal),
       SNEAKER: Number(Sneaker),
       CANTIDAD: Number(Cantidad),
     });
     console.log(Data);
   };
   const handleSQL = () => {
-    fetch("http://localhost:3200/compras", {
+    fetch("http://localhost:3200/distribucion", {
       method: "POST",
       body: JSON.stringify(Data),
       headers: {
@@ -88,6 +76,7 @@ export default function AlertDialogAddCompras(props) {
         console.log("Success:", response);
         handleClose();
         props.handleRefresh();
+        // window.location.reload(false); //refresh
       });
   };
   return (
@@ -103,22 +92,14 @@ export default function AlertDialogAddCompras(props) {
         fullWidth={true}
         maxWidth={"sm"}
       >
-        <DialogTitle id="alert-dialog-title">Agregar nueva compra</DialogTitle>
+        <DialogTitle id="alert-dialog-title">Agregar nueva distribucion</DialogTitle>
         <DialogContent>
           <FormGroup>
-            <CatalogoPago
-              nombre={"Pago"}
-              opciones={Cpago}
+            <CatalogoSucursal
+              nombre={"Sucursal"}
+              opciones={CSucursal}
               funcion={(hijo) => {
-                setPago(hijo);
-                console.log(hijo);
-              }}
-            />
-            <CatalogoProveedor
-              nombre={"Proveedor"}
-              opciones={Cproveedor}
-              funcion={(hijo) => {
-                setProveedor(hijo);
+                setSucursal(hijo);
                 console.log(hijo);
               }}
             />

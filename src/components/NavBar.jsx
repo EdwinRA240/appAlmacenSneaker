@@ -60,7 +60,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            DB_Sneaker
+            Almacen_Sneaker
           </Typography>
 
           {/* NavBar Mobile */}
@@ -123,7 +123,7 @@ function NavBar() {
               textDecoration: "none",
             }}
           >
-            DB_Sneaker
+            Almacen_Sneaker
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

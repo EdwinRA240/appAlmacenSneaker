@@ -32,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         <Route path="/Almacen" element={<Almacen />} />
         <Route path="/Compras" element={<Compras />} />
-        {/* <Route path="/Distribucion" element={<Distribucion />} /> */}
+        <Route path="/Distribucion" element={<Distribucion />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

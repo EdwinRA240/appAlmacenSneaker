@@ -14,27 +14,28 @@ import NavBar from "../NavBar";
 
 export default function TableB(props) {
   const handleRefresh = () => {
-    window.location.reload(false);
+    // window.location.reload(false);
+    props.setUpdated(!props.Updated);
   };
   return (
     <>
     <NavBar/>
-    <Container maxWidth="lg" sx={{ mt: 12, mb: 5 }}>
+    <Container maxWidth="xlg" sx={{ mt: 12, mb: 5 }}>
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell textAlign="center">MARCA</TableCell>
-              <TableCell textAlign="center">MODELO</TableCell>
-              <TableCell textAlign="center">PRECIO</TableCell>
-              <TableCell textAlign="center">TALLA</TableCell>
-              <TableCell textAlign="center">PROPOSITO</TableCell>
-              <TableCell textAlign="center">GENERO</TableCell>
-              <TableCell textAlign="center">STOCK</TableCell>
-              {/* <TableCell textAlign="center">
+              <TableCell align="center">MARCA</TableCell>
+              <TableCell align="center">MODELO</TableCell>
+              <TableCell align="center">PRECIO</TableCell>
+              <TableCell align="center">TALLA</TableCell>
+              <TableCell align="center">PROPOSITO</TableCell>
+              <TableCell align="center">GENERO</TableCell>
+              <TableCell align="center">STOCK</TableCell>
+              {/* <TableCell align="center">
                 <AlertDialogAddDireccion data={props.data.rows} />
               </TableCell> */}
-              <TableCell textAlign="center">
+              <TableCell align="center">
                 <IconButton onClick={handleRefresh}>
                   <RefreshIcon />
                 </IconButton>
@@ -47,17 +48,17 @@ export default function TableB(props) {
                 key={e.CLAVE}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell textAlign="center">{e.MARCA}</TableCell>
-                <TableCell textAlign="center">{e.MODELO}</TableCell>
-                <TableCell textAlign="center">{(e.PRECIO).toLocaleString('es-MX', {style: 'currency', currency: 'MXN'})}</TableCell>
-                <TableCell textAlign="center">{e.TALLA}</TableCell>
-                <TableCell textAlign="center">{e.PROPOSITO}</TableCell>
-                <TableCell textAlign="center">{e.GENERO}</TableCell>
-                <TableCell textAlign="center">{e.STOCK}</TableCell>
-                {/* <TableCell textAlign="center">
+                <TableCell align="center">{e.MARCA}</TableCell>
+                <TableCell align="center">{e.MODELO}</TableCell>
+                <TableCell align="center">{(e.PRECIO).toLocaleString('es-MX', {style: 'currency', currency: 'MXN'})}</TableCell>
+                <TableCell align="center">{e.TALLA}</TableCell>
+                <TableCell align="center">{e.PROPOSITO}</TableCell>
+                <TableCell align="center">{e.GENERO}</TableCell>
+                <TableCell align="center">{e.STOCK}</TableCell>
+                {/* <TableCell align="center">
                   <AlertDialogDeleteEmpleado data={e} />
                 </TableCell>
-                <TableCell textAlign="center">
+                <TableCell align="center">
                   <AlertDialogUpdateEmpleado data={e} />
                 </TableCell> */}
               </TableRow>

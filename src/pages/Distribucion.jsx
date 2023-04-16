@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
-import Tabla from "../components/Compras/TableCompras";
+import Tabla from "../components/Distribucion/TableDistribucion";
 
-const Compras = () => {
-  const [Compras, setCompras] = useState([]);
+const Distribucion = () => {
+  const [Distribucion, setDistribucion] = useState([]);
+  const [Updated, setUpdated] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3200/compras")
+    fetch("http://localhost:3200/distribucion")
       .then((response) => {
         return response.json();
       })
       .then((responseJson) => {
-        setCompras(responseJson);
+        setDistribucion(responseJson);
         console.log(responseJson);
       });
-  }, []);
+  }, [Updated]);
 
   return (
     <>
-      <Tabla data = {Compras}/>
+      <Tabla data = {Distribucion} Updated={Updated} setUpdated={setUpdated}/>
     </>
   );
 };
 
-export default Compras;
+export default Distribucion;

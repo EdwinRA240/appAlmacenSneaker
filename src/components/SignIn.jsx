@@ -16,7 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {"Bodega_Sneaker "}
+      {"Almacen_Sneaker "}
       <Link color="inherit" href="https://mui.com/"></Link> {new Date().getFullYear()}
       {"."}
     </Typography>
@@ -33,8 +33,8 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
 
     setData({
-      user: data.get("user"),
-      password: data.get("password"),
+      Usuario: data.get("Usuario"),
+      Contraseña: data.get("Contraseña"),
     });
 
     console.log(Data);
@@ -42,7 +42,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs" sx={{ mt: 22, mb: 5 }}>
+      <Container component="main" maxWidth="xs" sx={{ mt: 15, mb: 5 }}>
         <CssBaseline />
         <Box
           sx={{
@@ -56,7 +56,7 @@ export default function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Administrador
           </Typography>
           <Box
             component="form"
@@ -69,22 +69,22 @@ export default function SignIn() {
             <TextField
               margin="normal"
               fullWidth
-              name="useer"
-              label="User"
-              autoComplete="user"
+              name="Usuario"
+              label="Usuario"
+              autoComplete="Usuario"
               autoFocus
             />
             <TextField
               margin="normal"
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              autoComplete="current-password"
+              name="Contraseña"
+              label="Contraseña"
+              type="Contraseña"
+              autoComplete="current-Contraseña"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+              label="Recordar"
             />
             <Button
               type="submit"
@@ -93,17 +93,17 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Iniciar Sesion
             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                  Forgot password?
+                  ¿Olvidaste tu contraseña?
                 </Link>
               </Grid>
               <Grid item>
                 <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"¿No tienes una cuenta? Registrar"}
                 </Link>
               </Grid>
             </Grid>

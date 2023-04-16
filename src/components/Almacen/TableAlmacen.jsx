@@ -11,7 +11,6 @@ import { Container, IconButton } from "@mui/material";
 // import AlertDialogUpdateEmpleado from "./AlertDialogUpdateEmpleado";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import NavBar from "../NavBar";
-// import AlertDialogAddDireccion from "./AlertDialogAddEmpleado";
 
 export default function TableB(props) {
   const handleRefresh = () => {
@@ -50,7 +49,7 @@ export default function TableB(props) {
               >
                 <TableCell textAlign="center">{e.MARCA}</TableCell>
                 <TableCell textAlign="center">{e.MODELO}</TableCell>
-                <TableCell textAlign="center">{e.PRECIO}</TableCell>
+                <TableCell textAlign="center">{(e.PRECIO).toLocaleString('es-MX', {style: 'currency', currency: 'MXN'})}</TableCell>
                 <TableCell textAlign="center">{e.TALLA}</TableCell>
                 <TableCell textAlign="center">{e.PROPOSITO}</TableCell>
                 <TableCell textAlign="center">{e.GENERO}</TableCell>

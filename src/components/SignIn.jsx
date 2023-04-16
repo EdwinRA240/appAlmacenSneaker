@@ -63,7 +63,7 @@ export default function SignIn() {
             onBlur={handleSubmit}
             // onSubmit={handleSetData}
             noValidate
-            href="/status"
+            href="/Almacen"
             sx={{ mt: 1 }}
           >
             <TextField
@@ -88,7 +88,7 @@ export default function SignIn() {
             />
             <Button
               type="submit"
-              href="/status"
+              href="/Almacen"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}

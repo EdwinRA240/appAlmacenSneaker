@@ -11,7 +11,7 @@ import { Container, IconButton } from "@mui/material";
 // import AlertDialogUpdateEmpleado from "./AlertDialogUpdateEmpleado";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import NavBar from "../NavBar";
-// import AlertDialogAddDireccion from "./AlertDialogAddEmpleado";
+import AlertDialogAddCompras from "./AlertDialogAddCompras";
 
 export default function TableB(props) {
   const handleRefresh = () => {
@@ -25,21 +25,22 @@ export default function TableB(props) {
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell textAlign="center">FECHA</TableCell>
-              <TableCell textAlign="center">PROVEEDOR</TableCell>
-              <TableCell textAlign="center">MARCA</TableCell>
-              <TableCell textAlign="center">MODELO</TableCell>
-              <TableCell textAlign="center">TALLA</TableCell>
-              <TableCell textAlign="center">PAGO</TableCell>
-              <TableCell textAlign="center">CANTIDAD</TableCell>
-              <TableCell textAlign="center">PRECIO</TableCell>
-              <TableCell textAlign="center">TOTAL</TableCell>
-              {/* <TableCell textAlign="center">
-                <AlertDialogAddDireccion data={props.data.rows} />
-              </TableCell> */}
-              <TableCell textAlign="center">
+              <TableCell textalign="center">FECHA</TableCell>
+              <TableCell textalign="center">PROVEEDOR</TableCell>
+              <TableCell textalign="center">MARCA</TableCell>
+              <TableCell textalign="center">MODELO</TableCell>
+              <TableCell textalign="center">TALLA</TableCell>
+              <TableCell textalign="center">PAGO</TableCell>
+              <TableCell textalign="center">CANTIDAD</TableCell>
+              <TableCell textalign="center">PRECIO</TableCell>
+              <TableCell textalign="center">TOTAL</TableCell>
+              <TableCell textalign="center">
+                <AlertDialogAddCompras data={props.data} />
+              </TableCell>
+              <TableCell textalign="center">
                 <IconButton onClick={handleRefresh}>
                   <RefreshIcon />
+
                 </IconButton>
               </TableCell>
             </TableRow>
@@ -50,19 +51,19 @@ export default function TableB(props) {
                 key={e.CLAVE}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell textAlign="center">{e.FECHA}</TableCell>
-                <TableCell textAlign="center">{e.PROVEEDOR}</TableCell>
-                <TableCell textAlign="center">{e.MARCA}</TableCell>
-                <TableCell textAlign="center">{e.MODELO}</TableCell>
-                <TableCell textAlign="center">{e.TALLA}</TableCell>
-                <TableCell textAlign="center">{e.PAGO}</TableCell>
-                <TableCell textAlign="center">{e.CANTIDAD}</TableCell>
-                <TableCell textAlign="center">{e.PRECIO}</TableCell>
-                <TableCell textAlign="center">{e.TOTAL}</TableCell>
-                {/* <TableCell textAlign="center">
+                <TableCell textalign="center">{(e.FECHA).match(/^\d{4}-\d{2}-\d{2}/)[0]}</TableCell>
+                <TableCell textalign="center">{e.PROVEEDOR}</TableCell>
+                <TableCell textalign="center">{e.MARCA}</TableCell>
+                <TableCell textalign="center">{e.MODELO}</TableCell>
+                <TableCell textalign="center">{e.TALLA}</TableCell>
+                <TableCell textalign="center">{e.PAGO}</TableCell>
+                <TableCell textalign="center">{e.CANTIDAD}</TableCell>
+                <TableCell textalign="center">{(e.PRECIO).toLocaleString('es-MX', {style: 'currency', currency: 'MXN'})}</TableCell>
+                <TableCell textalign="center">{(e.TOTAL).toLocaleString('es-MX', {style: 'currency', currency: 'MXN'})}</TableCell>
+                {/* <TableCell textalign="center">
                   <AlertDialogDeleteEmpleado data={e} />
                 </TableCell>
-                <TableCell textAlign="center">
+                <TableCell textalign="center">
                   <AlertDialogUpdateEmpleado data={e} />
                 </TableCell> */}
               </TableRow>

@@ -26,14 +26,17 @@ export default function TableB(props) {
           <TableHead>
             <TableRow>
               <TableCell textAlign="center">FECHA</TableCell>
-              <TableCell textAlign="center">PROVEEDOR</TableCell>
               <TableCell textAlign="center">MARCA</TableCell>
               <TableCell textAlign="center">MODELO</TableCell>
               <TableCell textAlign="center">TALLA</TableCell>
-              <TableCell textAlign="center">PAGO</TableCell>
               <TableCell textAlign="center">CANTIDAD</TableCell>
-              <TableCell textAlign="center">PRECIO</TableCell>
-              <TableCell textAlign="center">TOTAL</TableCell>
+              <TableCell textAlign="center">SUCURSAL</TableCell>
+              <TableCell textAlign="center">ESTADO</TableCell>
+              <TableCell textAlign="center">ALCAL_MUN</TableCell>
+              <TableCell textAlign="center">CODIGO_POSTAL</TableCell>
+              <TableCell textAlign="center">CALLE</TableCell>
+              <TableCell textAlign="center">NUMERO_EXT</TableCell>
+              <TableCell textAlign="center">NUMERO_INT</TableCell>
               {/* <TableCell textAlign="center">
                 <AlertDialogAddDireccion data={props.data.rows} />
               </TableCell> */}
@@ -51,14 +54,17 @@ export default function TableB(props) {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell textAlign="center">{e.FECHA}</TableCell>
-                <TableCell textAlign="center">{e.PROVEEDOR}</TableCell>
                 <TableCell textAlign="center">{e.MARCA}</TableCell>
                 <TableCell textAlign="center">{e.MODELO}</TableCell>
                 <TableCell textAlign="center">{e.TALLA}</TableCell>
-                <TableCell textAlign="center">{e.PAGO}</TableCell>
                 <TableCell textAlign="center">{e.CANTIDAD}</TableCell>
-                <TableCell textAlign="center">{e.PRECIO}</TableCell>
-                <TableCell textAlign="center">{e.TOTAL}</TableCell>
+                <TableCell textAlign="center">{e.SUCURSAL}</TableCell>
+                <TableCell textAlign="center">{e.ESTADO}</TableCell>
+                <TableCell textAlign="center">{e.ALCAL_MUN}</TableCell>
+                <TableCell textAlign="center">{e.CODIGO_POSTAL}</TableCell>
+                <TableCell textAlign="center">{e.CALLE}</TableCell>
+                <TableCell textAlign="center">{e.NUMERO_EXT}</TableCell>
+                <TableCell textAlign="center">{e.NUMERO_INT}</TableCell>
                 {/* <TableCell textAlign="center">
                   <AlertDialogDeleteEmpleado data={e} />
                 </TableCell>

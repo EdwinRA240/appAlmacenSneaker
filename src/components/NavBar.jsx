@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import StorageIcon from "@mui/icons-material/Storage";
 
 const pages = [
-  "Status",
+  "Almacen",
   "Compras",
   "Distribucion",
 ];

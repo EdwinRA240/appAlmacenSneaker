@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import NotFound from "./components/NotFound";
-import NavBar from "./components/NavBar";
 import NavBar2 from "./components/NavBar2";
 import Almacen from "./pages/Almacen";
 import Compras from "./pages/Compras";

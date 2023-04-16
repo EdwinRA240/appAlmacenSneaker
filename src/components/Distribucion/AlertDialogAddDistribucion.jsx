@@ -27,7 +27,7 @@ export default function AlertDialogAddCompras(props) {
 
   useEffect(() => {
 
-    fetch("http://localhost:3200/catalogoSucursal")
+    fetch("http://192.168.43.2:3200/catalogoSucursal")
       .then((response) => {
         return response.json();
       })
@@ -36,7 +36,7 @@ export default function AlertDialogAddCompras(props) {
         console.log(responseJson);
       });
 
-      fetch("http://localhost:3200/catalogoSneaker")
+      fetch("http://192.168.43.2:3200/catalogoSneaker")
         .then((response) => {
           return response.json();
         })
@@ -63,7 +63,7 @@ export default function AlertDialogAddCompras(props) {
     console.log(Data);
   };
   const handleSQL = () => {
-    fetch("http://localhost:3200/distribucion", {
+    fetch("http://192.168.43.2:3200/distribucion", {
       method: "POST",
       body: JSON.stringify(Data),
       headers: {

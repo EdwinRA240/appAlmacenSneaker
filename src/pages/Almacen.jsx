@@ -6,7 +6,7 @@ const Almacen = () => {
   const [Updated, setUpdated] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3200/Almacen")
+    fetch("http://192.168.43.2:3200/Almacen")
       .then((response) => {
         return response.json();
       })

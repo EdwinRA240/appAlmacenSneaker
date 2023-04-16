@@ -6,7 +6,7 @@ const Distribucion = () => {
   const [Updated, setUpdated] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3200/distribucion")
+    fetch("http://192.168.43.2:3200/distribucion")
       .then((response) => {
         return response.json();
       })

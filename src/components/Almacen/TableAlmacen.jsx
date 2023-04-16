@@ -14,7 +14,6 @@ import NavBar from "../NavBar";
 
 export default function TableB(props) {
   const handleRefresh = () => {
-    // window.location.reload(false);
     props.setUpdated(!props.Updated);
   };
   return (

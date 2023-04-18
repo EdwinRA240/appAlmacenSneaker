@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -26,18 +27,25 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const [Data, setData] = React.useState({});
+
+  const [credentials, setCredentials] = useState({
+    Usuario: '',
+    Contraseña: '',
+  });
+
+  const handleChange = (event) => {
+    setCredentials({ ...credentials, [event.target.name]: event.target.value });
+    console.log(credentials);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-
-    setData({
-      Usuario: data.get("Usuario"),
-      Contraseña: data.get("Contraseña"),
-    });
-
-    console.log(Data);
+    // Aquí iría tu código de validación de inicio de sesión
+    if (credentials.Usuario === 'root' && credentials.Contraseña === 'Mysql123.') {
+      window.location.href = '/Almacen';
+    } else {
+      alert('Credenciales inválidas');
+    }
   };
 
   return (
@@ -60,10 +68,6 @@ export default function SignIn() {
           </Typography>
           <Box
             component="form"
-            onBlur={handleSubmit}
-            // onSubmit={handleSetData}
-            noValidate
-            href="/Almacen"
             sx={{ mt: 1 }}
           >
             <TextField
@@ -72,6 +76,8 @@ export default function SignIn() {
               name="Usuario"
               label="Usuario"
               autoComplete="Usuario"
+              // value={credentials.Usuario}
+              onChange = {handleChange}
               autoFocus
             />
             <TextField
@@ -79,7 +85,9 @@ export default function SignIn() {
               fullWidth
               name="Contraseña"
               label="Contraseña"
-              type="Contraseña"
+              type="Password"
+              // value={credentials.password}
+              onChange = {handleChange}
               autoComplete="current-Contraseña"
             />
             <FormControlLabel
@@ -87,8 +95,7 @@ export default function SignIn() {
               label="Recordar"
             />
             <Button
-              type="submit"
-              href="/Almacen"
+              onClick = {handleSubmit}
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}

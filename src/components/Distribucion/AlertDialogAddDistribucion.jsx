@@ -76,7 +76,6 @@ export default function AlertDialogAddCompras(props) {
         console.log("Success:", response);
         handleClose();
         props.handleRefresh();
-        // window.location.reload(false); //refresh
       });
   };
   return (
